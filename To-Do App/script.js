@@ -19,7 +19,7 @@ if (window.location.pathname.includes('login')) {
     
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                window.location.assign('./index.html');
+                window.location.assign('/T0-Do App/index.html');
             })
             .catch((error) => {
                 errorBox.textContent = error.message;
@@ -44,7 +44,7 @@ if (window.location.pathname.includes('Signup')) {
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                window.location.assign('./index.html');
+                window.location.assign('/T0-Do App/index.html');
             })
             .catch((error) => {
                 errorBox.textContent = error.message;
@@ -81,7 +81,7 @@ if (window.location.pathname.includes('index')) {
                 });
             });
         } else {
-            window.location.assign('./login.html');
+            window.location.assign('/T0-Do App/login.html');
         }
     });
 
@@ -129,7 +129,7 @@ if (window.location.pathname.includes('index')) {
             buttondel.addEventListener('click', () => deleteitem(id));
             buttonUpd.addEventListener('click', () => updateitem(id));
 
-            img.src = "./img/to-do-list.png";
+            img.src = "To-Do App/img/to-do-list.png";
             img.alt = "Sample Image";
             img.style.width = "clamp(7%,8%,11%)";
 
@@ -201,7 +201,7 @@ if (window.location.pathname.includes('index')) {
 
             const target = document.getElementById(id);
             const img = document.createElement("img");
-            img.src = "./img/to-do-list.png";
+            img.src = "/T0-Do App/img/to-do-list.png";
             img.style.width = "clamp(7%,8%,11%)";
 
             target.children[1].children[0].disabled = false;
@@ -222,7 +222,7 @@ if (window.location.pathname.includes('index')) {
     logout_btn.addEventListener('click', () => {
         signOut(auth).then(() => {
             console.log('User logged out');
-            window.location.assign('./login.html');
+            window.location.assign('/T0-Do App/login.html');
         }).catch((error) => {
             console.error(error);
         });
@@ -232,7 +232,7 @@ if (window.location.pathname.includes('index')) {
 // Global auth redirect guard (after DOM has loaded)
 onAuthStateChanged(auth, (user) => {
     if (!user && !window.location.pathname.includes('login') && !window.location.pathname.includes('Signup')) {
-        window.location.assign('./login.html');
+        window.location.assign('/T0-Do App/login.html');
     }
 });
 
