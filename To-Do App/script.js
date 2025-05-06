@@ -106,7 +106,7 @@ if (window.location.pathname.includes('index')) {
                 deleteDoc(doc(db, "Todo", element.id));
             });
         });
-    }
+  
 
     function additem(value, id) {
         if (value !== '') {
@@ -236,3 +236,4 @@ onAuthStateChanged(auth, (user) => {
         window.location.assign('login.html');
     }
 });
+}
