@@ -19,7 +19,7 @@ if (window.location.pathname.includes('login')) {
     
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                window.location.assign('./index.html');
+                window.location.assign('http://127.0.0.1:3000/index.html');
             })
             .catch((error) => {
                 errorBox.textContent = error.message;
@@ -44,7 +44,7 @@ if (window.location.pathname.includes('Signup')) {
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                window.location.assign('./index.html');
+                window.location.assign('http://127.0.0.1:3000/index.html');
             })
             .catch((error) => {
                 errorBox.textContent = error.message;
@@ -81,7 +81,7 @@ if (window.location.pathname.includes('index')) {
                 });
             });
         } else {
-            window.location.assign('./login.html');
+          window.location.assign('http://127.0.0.1:3000/login.html');
         }
     });
 
@@ -223,7 +223,7 @@ if (window.location.pathname.includes('index')) {
     logout_btn.addEventListener('click', () => {
         signOut(auth).then(() => {
             console.log('User logged out');
-            window.location.assign('./login.html');
+            window.location.assign('http://127.0.0.1:3000/login.html');
         }).catch((error) => {
             console.error(error);
         });
@@ -233,6 +233,6 @@ if (window.location.pathname.includes('index')) {
 // Global auth redirect guard (after DOM has loaded)
 onAuthStateChanged(auth, (user) => {
     if (!user && !window.location.pathname.includes('login') && !window.location.pathname.includes('Signup')) {
-        window.location.assign('./login.html');
+        window.location.assign('http://127.0.0.1:3000/login.html');
     }
 });
